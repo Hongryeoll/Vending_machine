@@ -15,7 +15,7 @@ body {
   gap: 0 28px;
   padding-top: 248px;
   padding-bottom: 50px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Noto sans KR", sans-serif;
 }
 
 #app .vending-machine,
@@ -25,13 +25,13 @@ body {
   box-sizing: border-box;
 }
 
-#app .tit-app {
+#app .title-app {
   position: absolute;
   top: 0;
   width: 100%;
   max-width: 386px;
   height: 180px;
-  background-image: url(/src/images/Logo_img.png);
+  background-image: url(../images/Logo_img.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -59,8 +59,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  /* right: 0;
-    bottom: 0; */
   width: 100%;
   height: 100%;
   border: 3px solid #6327fe;
@@ -78,7 +76,7 @@ body {
   height: 100%;
   z-index: 10;
   border-radius: 10px;
-  background: no-repeat center / 60px 46px url("/src/images/Sold-out.png")
+  background: no-repeat center / 60px 46px url(../images/Sold-out.png)
     rgba(0, 0, 0, 0.5);
 }
 
@@ -96,7 +94,7 @@ body {
   pointer-events: none;
 }
 
-.vending-machine .btn-item {
+.vending-machine .button-item {
   padding: 11px 0 9px;
 }
 
@@ -105,15 +103,16 @@ body {
   margin: 0 auto;
 }
 
-.vending-machine .tit-item {
+.vending-machine .title-item {
   display: block;
   line-height: 13px;
   font-size: 9px;
   margin: 6px 0 7px;
+  line-height: 13px;
 }
 
-.vending-machine .txt-price {
-  display: inline-block; /*패딩값 잘 먹게 하기 위해*/
+.vending-machine .text-price {
+  display: inline-block;
   font-size: 12px;
   padding: 5px 12px;
   background-color: #6327fe;
@@ -121,52 +120,51 @@ body {
   color: #fff;
 }
 
-.cont-buy .info-balance,
-.cont-buy .inp-put,
-.cont-buy .list-item-staged {
+.container-buy .info-balance,
+.container-buy .input-put,
+.container-buy .list-item-staged {
   padding: 7px 10px;
   box-sizing: border-box;
   border-radius: 5px;
 }
 
-.cont-buy .btn-return,
-.cont-buy .btn-put,
-.cont-buy .btn-get {
+.container-buy .button-return,
+.container-buy .button-put,
+.container-buy .button-get {
   font-size: 13px;
   border-radius: 5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
-.vending-machine .cont-buy {
+.vending-machine .container-buy {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /*콜라고르는 곳과 같은 3개 column을 맞추기 위해*/
   gap: 12px;
   margin-top: 20px;
 }
 
-.cont-buy .info-balance {
+.container-buy .info-balance {
   grid-column: 1/3;
   font-size: 14px;
   background-color: #eae8fe;
 }
 
-.info-balance .txt-balance {
+.info-balance .text-balance {
   float: right;
 }
 
-.cont-buy .inp-put {
+.container-buy .input-put {
   grid-column: 1/3;
   border: 1px solid #bdbdbd;
 }
 
-.cont-buy .btn-get {
+.container-buy .button-get {
   font-weight: 700;
   background-color: #6327fe;
   color: #fff;
 }
 
-.cont-buy .list-item-staged {
+.container-buy .list-item-staged {
   grid-column: 1/3;
   height: 106px;
   overflow-y: scroll;
@@ -181,13 +179,12 @@ body {
   box-sizing: border-box;
 }
 
-/*맨처음 li 빼고 2번째부터 */
 .list-item-staged li + li {
   margin-top: 6px;
 }
 
 .list-item-staged .img-item,
-.list-item-staged .txt-item {
+.list-item-staged .text-item {
   float: left;
 }
 
@@ -195,13 +192,13 @@ body {
   width: 18px;
 }
 
-.list-item-staged .txt-item {
+.list-item-staged .text-item {
   margin-left: 10px;
   line-height: 33px;
   font-size: 9px;
 }
 
-.list-item-staged .num-counter {
+.list-item-staged .number-counter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,30 +213,30 @@ body {
   background-color: #eae8fe;
 }
 
-.my-info .cont-mymoney {
+.my-info .container-mymoney {
   padding: 10px 27px;
   background-color: #fff;
 }
 
-.cont-mymoney .info-mymoney {
+.container-mymoney .info-mymoney {
   padding: 6px 10px;
   line-height: 20px;
   background-color: #eae8fe;
   border-radius: 5px;
 }
 
-.cont-mymoney .txt-mymoney {
+.container-mymoney .text-mymoney {
   float: right;
   font-weight: 700;
 }
 
-.my-info .cont-myitems {
+.my-info .container-myitems {
   margin-top: 20px;
-  padding: 25px 27px 32px;
   background-color: #fff;
+  padding: 26px 23px 54px;
 }
 
-.cont-myitems .tit-myitem {
+.container-myitems .title-myitem {
   display: block;
   text-align: center;
   margin-bottom: 13px;
@@ -247,7 +244,7 @@ body {
   font-weight: 700;
 }
 
-.cont-myitems .list-item-staged {
+.container-myitems .list-item-staged {
   height: 364px;
   overflow-y: scroll;
   padding: 12px;
@@ -257,34 +254,30 @@ body {
   border-radius: 5px;
 }
 
-.cont-myitems .txt-total {
+.container-myitems .text-total {
   display: block;
   text-align: right;
   font-size: 12px;
+  font-weight: 500;
   margin-top: 10px;
+  
 }
 
-/* 스크롤바 설정*/
-.cont-buy .list-item-staged::-webkit-scrollbar {
+.container-buy .list-item-staged::-webkit-scrollbar {
   width: 6px;
 }
 
-/* 스크롤바 막대 설정*/
-.cont-buy .list-item-staged::-webkit-scrollbar-thumb {
+.container-buy .list-item-staged::-webkit-scrollbar-thumb {
   height: 17%;
   background-color: rgb(186, 186, 186);
-  /* 스크롤바 둥글게 설정    */
   border-radius: 10px;
 }
 
-/* 스크롤바 뒷 배경 설정*/
-.cont-buy .list-item-staged::-webkit-scrollbar-track {
+.container-buy .list-item-staged::-webkit-scrollbar-track {
   background-color: rgb(255, 255, 255);
 }
 
-/*최소 320px ~ 480px */
-/*(-webkit-min-device-pixel-ratio:2) -->레티나일 경우--> 최소 디바이스의 비율이 1px에 2개 이상이 들어갈 경우*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-width: 320px) and (max-width: 480px) {
   body {
     background-color: #fff;
   }
@@ -293,21 +286,17 @@ body {
     padding-top: 65px;
   }
 
-  #app .tit-app {
+  #app .my-info {
+    background-color: #fff;
+  }
+
+  #app .title-app {
     width: 166px;
     height: 70px;
   }
 
-  .my-info .cont-myitems {
+  .my-info .container-myitems {
     margin-top: 0px;
     padding: 31px 27px 32px;
   }
-}
-
-/*
-
-반응형웹 --> 웹 용이라는 건 없음/모바일용을 만들기 위함, 엄청엄청 다양한 디바이스! > 다 맞출 수는 없음 
-입사하면 중심이 되는 기기의 크기에 기준으로 반응형으로 만들기로 약속
-
-
-*/
+} 
