@@ -2,7 +2,6 @@
 
 밴딩머신 제작
 ======
-URL:
 ![image](https://user-images.githubusercontent.com/95600994/165269443-bd6b8764-ba8f-4077-a586-e28a70b1575e.png)
 
 ----
