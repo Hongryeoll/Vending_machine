@@ -8,3 +8,8 @@ function getJson(){
     .catch(error=>alert(error))
 }
 
+// 메인컨테이너에 아이템 html로 추가
+function displayMainItems(items){
+    const container = document.querySelector('.list-item');
+    container.innerHTML = items.map(item=>createMainHtmlString(item)).json('');
+}

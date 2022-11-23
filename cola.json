@@ -2,7 +2,7 @@
 
     "items":[
     {
-        "image": "./images/original_cola.svg",
+        "image": "./images/Original_cola.svg",
         "type": "Original_cola",
         "color": "original",
         "price": 1000
