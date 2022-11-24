@@ -63,6 +63,26 @@ function soldOut(colaName, colaCount) {
     }
 }
 
+// 입금 클릭시 잔액 변경
+const button_put = document.querySelector(".button-put");
+const input_put = document.querySelector(".input-put");
+const text_mymoney = document.querySelector(".text-mymoney");
+const text_balance = document.querySelector(".text-balance");
+
+button_put.addEventListener('click',()=>{
+    //입금액 공백일때 잔액 예외처리
+    if(input_put.value==''){
+        input_put.value = 0;
+    }
+    // 기존 추가 입금액 저장
+    text_balance.textContent = parseInt(input_put.value) + parseInt(text_balance.textContent);
+    // 입금 후 금액 초기화
+    input_put.value=null;
+})
+
+// 거스름돈 반환 후 잔액 0, 소지금에 잔액 추가
+const button_return = document.querySelector("button-return");
+
 
 // json 함수 호출
 getJson()
