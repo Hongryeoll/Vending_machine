@@ -10,8 +10,8 @@ function getJson(){
 
 // 메인컨테이너에 아이템 html로 추가
 function displayMainItems(items){
-    const container = document.querySelector('.list-item');
-    container.innerHTML = items.map(item=>createMainHtmlString(item)).json('');
+    const container = document.querySelector('.list-cola');
+    container.innerHTML = items.map(item => createMainHtmlString(item)).join('');
 }
 
 // 각 item을 메인 콜라 리스트 html로 변경
@@ -30,3 +30,13 @@ function createMainHtmlString(item){
     </li>
     `
 }
+
+const list_getItem = document.querySelector(".list-getItem");
+
+
+
+// json 함수 호출
+getJson()
+    .then(items=>{
+        displayMainItems(items)
+    });

@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>벤딩머신 만들기</title>
-    <link rel="stylesheet" href="./src/style/reset.css" />
-    <link rel="stylesheet" href="./src/style/style.css" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./src/main.js" defer></script>
   </head>
   <body>
     <div id="app">
@@ -14,7 +15,7 @@
       <section class="vending-machine">
         <h2 class="ir">자판기 화면</h2>
         <!-- json으로 item 정보 출력 -->
-        <ul class="list-item"></ul>
+        <ul class="list-cola"></ul>
         <section class="container-buy">
           <h2 class="ir">구입 관련 정보</h2>
           <div class="info-balance">
@@ -31,7 +32,7 @@
           class="input-put" 
           />
           <button class="button-put" type="button">입금</button>
-          <article class="list-item-staged"></article>
+          <article class="list-getItem"></article>
           <button type="button" class="button-get">획득</button>
         </section>
       </section>
@@ -44,7 +45,7 @@
         </div>
         <div class="container-myitems">
           <h1 class="title-myitem">획득한 음료</h1>
-          <article class="list-getItem-staged"></article>
+          <article class="list-getItem result"></article>
           <p class="text-total">총금액 : 0원</p>
         </div>
       </section>
