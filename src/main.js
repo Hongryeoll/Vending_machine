@@ -33,6 +33,35 @@ function createMainHtmlString(item){
 
 const list_getItem = document.querySelector(".list-getItem");
 
+// 선택한 콜라 수량 변경
+function itemCount(item_name) {
+    //getItem에 같은 item이 있는 경우 수량 변경
+    cola_obj[item_name] ? cola_obj[item_name]+=1 : cola_obj[item_name]=1;
+
+    // 5개 이상 선택시 품절
+    if(cola_obj[item_name]>=5){
+        soldOut(item_name, cola_obj[item_name]);
+    }
+
+    // 콜라 수량 변경 요청이 온 콜라 이름과 기존에 등록ㄷ된 콜라들 중 맞는 이름을 찾아 해당 콜라 수량을 변경.
+    for(let i=0; i<con_getCola.children.length; i++) {
+        if(con_getCola.children[i].dataset.value===item_name) {
+            con_getCola.children[i].lastElementChild.innerText=cola_obj[item_name];
+        }
+    }
+}
+
+function soldOut(colaName, colaCount) {
+    for(let j=0; j<list_cola.children.length; j++) {
+        if(list_cola.children[j].dataset.value===colaName){
+            if(colaCount>=5){
+                list_cola.children[j].classList.add("soldout");
+            } else {
+                list_cola.children[j].classList.remove("soldout")
+            }
+        }
+    }
+}
 
 
 // json 함수 호출
