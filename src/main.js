@@ -80,8 +80,12 @@ button_put.addEventListener('click',()=>{
     input_put.value=null;
 })
 
-// 거스름돈 반환 후 잔액 0, 소지금에 잔액 추가
-const button_return = document.querySelector("button-return");
+// 거스름돈 반환 후 잔액0, 소지금에 잔액 추가
+const button_return = document.querySelector(".button-return");
+button_return.addEventListener('click', ()=>{
+    text_mymoney.textContent = parseInt(text_mymoney.textContent) + parseInt(text_balance.textContent);
+})
+
 
 
 // json 함수 호출
