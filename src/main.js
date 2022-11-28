@@ -87,6 +87,32 @@ button_return.addEventListener('click', ()=>{
 })
 
 
+const button_get = document.querySelector(".button-get");
+button_get.addEventListener('click', ()=>{
+    // 총 수량 * 1000원(개당 가격) > 잔액이면 획득 불가. 경고 출력
+    // 총 수량 * 1000원(개당 가격)) < 잔액이면 정상 획득, 음료 list에 추가
+    let totalCount = 0;
+    for(let i = 0; i < list_getItem.children.length; i++){
+        totalCount += parseInt(list_getItem.children[i].children[2].innerText);
+    }
+
+    if(totalCount * 1000 > parseInt(text_balance.textContent)){
+        alert("잔액이 부족합니다.")
+    } else if (list_getItem.children.length === 0){
+        //list_getItem에 아무것도 없을 경우 예외처리
+        return
+    } else {
+        getResult();
+
+    }
+})
+
+// 획득한 음료에 아이템 표시.
+const result = document.querySelector(".list-getItem.result");
+function getResult(){
+    result.insertAdjacentHTML("afterbegin", list-getItem.innerHTML);
+}
+
 
 // json 함수 호출
 getJson()
