@@ -102,7 +102,10 @@ button_get.addEventListener('click', ()=>{
         return
     } else {
         getResult();
-
+        // 잔액차감 및 콜라아이템 초기화
+        text_balance.textContent -= totalCount * 1000;
+        cola_obj = new Object(); // 아이템 초기화
+    list_getItem.innerHTML=``; // list-getItem 초기화
     }
 })
 
