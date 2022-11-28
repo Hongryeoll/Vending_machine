@@ -86,7 +86,6 @@ button_return.addEventListener('click', ()=>{
     text_mymoney.textContent = parseInt(text_mymoney.textContent) + parseInt(text_balance.textContent);
 })
 
-
 const button_get = document.querySelector(".button-get");
 button_get.addEventListener('click', ()=>{
     // 총 수량 * 1000원(개당 가격) > 잔액이면 획득 불가. 경고 출력
