@@ -115,6 +115,16 @@ function getResult(){
     result.insertAdjacentHTML("afterbegin", list-getItem.innerHTML);
 }
 
+// 총 금액 변경
+const text_total = document.querySelector(".text-total");
+function totalPrice(){
+    let total = 0;
+    for(let i =0; i < result.children.length; i++) {
+        total += parseInt(result.children[i].children[2].textContent);
+    }
+    text_total.textContent = total * 1000;
+}
+
 
 // json 함수 호출
 getJson()
