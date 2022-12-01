@@ -140,6 +140,30 @@ list_cola.addEventListener('click', event => {
         }
 })
 
+function newItem(clicked_cola, event){
+    con_getCola.insertAdjacentHTML("afterbegin", createGetHTMLString(event));
+    itemCount(clicked_cola);
+}
+
+function createGetHTMLString(item){
+    let className = item.target.classList.value;
+    let array = className.split("");
+    array.splice(0,5);
+    className = array.join("");
+
+    return `
+    <div data-value="${className}" class="con-cola">
+    <img
+        src="./images/${className}_cola.svg"
+        width="18px"
+        height="33px"
+        alt="${className} cola"
+        class="img-cola"
+    />
+    <p class="text-colaName guarantee">${className}_cola</p>
+    <p class="text-colaCount"></p>
+`
+}
 
 // json 함수 호출
 getJson()
