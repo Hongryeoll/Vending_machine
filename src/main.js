@@ -174,6 +174,7 @@ function createGetHTMLString(item){
     let array = className.split("");
     array.splice(0,5);
     className = array.join("");
+    console.log(className);
 
     return `
     <div data-value="${className}" class="con-cola">
