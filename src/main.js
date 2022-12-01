@@ -63,6 +63,30 @@ function soldOut(colaName, colaCount) {
     }
 }
 
+// getItem에서 item 클릭시 수량 감소.
+list_getItem.addEventListener("click", (event)=>{
+    //외부 클릭 예외처리
+    event.target.className === "list-getItem" ? "" : getListItemCount(event);
+})
+
+function getListItemCount(event){
+    let clicked_item = event.path.find(item => item.className === "con-cola");
+    let item_name = clicked_item.dataset.value;
+    let item_count = clicked_item.children[2];
+
+    if(item_count.innerText === "1"){
+        delete cola_obj[item_name];
+        clicked_item.outerHTML="";
+    } else {
+        item_count.innerText -= 1;
+        cola_obj[item_name] -= 1;
+    }
+
+    if(cola_obj[item_name] <= 5) {
+        soldOut(item_name, cola_obj[item_name]);
+    }
+}
+
 // 입금 클릭시 잔액 변경
 const button_put = document.querySelector(".button-put");
 const input_put = document.querySelector(".input-put");
