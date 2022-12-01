@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@charset "utf-8";
 
 .img-item {
   display: block;
@@ -43,10 +43,9 @@ body {
 
 .vending-machine .list-item {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin: 31px 27px 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
 }
-
 
 .vending-machine .list-item li {
   position: relative;
@@ -300,4 +299,4 @@ body {
     margin-top: 0px;
     padding: 31px 27px 32px;
   }
-} 
+}
