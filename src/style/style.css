@@ -31,7 +31,7 @@ body {
   width: 100%;
   max-width: 386px;
   height: 180px;
-  background-image: url(../images/Logo_img.png);
+  background-image: url(../images/logo.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -76,7 +76,7 @@ body {
   height: 100%;
   z-index: 10;
   border-radius: 10px;
-  background: no-repeat center / 60px 46px url(../images/Sold-out.png)
+  background: no-repeat center / 60px 46px url(../images/Sold-out.svg)
     rgba(0, 0, 0, 0.5);
 }
 

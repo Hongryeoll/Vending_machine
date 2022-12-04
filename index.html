@@ -7,6 +7,7 @@
     <title>벤딩머신 만들기</title>
     <link rel="stylesheet" href="./src/style/reset.css" />
     <link rel="stylesheet" href="./src/style/style.css" />
+    <script type="module" src="./main.js" defer></script>
   </head>
   <body>
     <div id="app">
@@ -18,7 +19,7 @@
             <button type="button" class="button-item">
               <img
                 class="img-item"
-                src="./src/images/Original_Cola.png"
+                src="./src/images/Original_Cola.svg"
                 alt="Original"
               />
               <strong class="title-item">Original_Cola</strong>
@@ -29,7 +30,7 @@
             <button class="button-item">
               <img
                 class="img-item"
-                src="./src/images/Violet_Cola.png"
+                src="./src/images/Violet_cola.svg"
                 alt="Violet"
               />
               <strong class="title-item">Violet_Cola</strong>
@@ -40,7 +41,7 @@
             <button class="button-item">
               <img
                 class="img-item"
-                src="./src/images/Yellow_Cola.png"
+                src="./src/images/Yellow_Cola.svg"
                 alt="Yellow"
               />
               <strong class="title-item">Yellow_Cola</strong>
@@ -51,7 +52,7 @@
             <button class="button-item">
               <img
                 class="img-item"
-                src="./src/images/Cool_Cola.png"
+                src="./src/images/Cool_Cola.svg"
                 alt="Cool"
               />
               <strong class="title-item">Cool_Cola</strong>
@@ -62,7 +63,7 @@
             <button class="button-item">
               <img
                 class="img-item"
-                src="./src/images/Green_Cola.png"
+                src="./src/images/Green_Cola.svg"
                 alt="Green"
               />
               <strong class="title-item">Green_Cola</strong>
@@ -73,7 +74,7 @@
             <button class="button-item">
               <img
                 class="img-item"
-                src="./src/images/Orange_Cola.png"
+                src="./src/images/Orange_Cola.svg"
                 alt="Orange"
               />
               <strong class="title-item">Orange_Cola</strong>
@@ -87,7 +88,14 @@
             잔액 : <span class="text-balance">원</span>
           </div>
           <button class="button-return">거스름돈 반환</button>
-          <input class="input-put" type="number" placeholder="입금액 입력" />
+          <input 
+          type="number" 
+          placeholder="입금액 입력" 
+          max="100000"
+          min="0"
+          step="1000"
+          class="input-put" 
+          />
           <button class="button-put" type="button">입금</button>
 
           <ul class="list-item-staged">
@@ -95,7 +103,7 @@
               <button class="button-staged" type="button">
                 <img
                   class="img-item"
-                  src="./src/images/Original_Cola.png"
+                  src="./src/images/Original_cola.svg"
                   alt="Original"
                 />
                 <strong class="text-item">Original_Cola</strong>
@@ -106,7 +114,7 @@
               <button class="button-staged" type="button">
                 <img
                   class="img-item"
-                  src="./src/images/Orange_Cola.png"
+                  src="./src/images/Orange_Cola.svg"
                   alt="Orange"
                 />
                 <strong class="text-item">Orange_Cola</strong>
@@ -117,7 +125,7 @@
               <button class="button-staged" type="button">
                 <img
                   class="img-item"
-                  src="./src/images/Yellow_Cola.png"
+                  src="./src/images/Yellow_Cola.svg"
                   alt="Yellow"
                 />
                 <strong class="text-item">Yellow_Cola</strong>
@@ -142,7 +150,7 @@
               <button class="button-staged" type="button">
                 <img
                   class="img-item"
-                  src="./src/images/Yellow_Cola.png"
+                  src="./src/images/Yellow_Cola.svg"
                   alt="Yellow"
                 />
                 <strong class="text-item">Yellow_Cola</strong>
@@ -153,7 +161,7 @@
               <button class="button-staged" type="button">
                 <img
                   class="img-item"
-                  src="./src/images/Original_Cola.png"
+                  src="./src/images/Original_Cola.svg"
                   alt="Original"
                 />
                 <strong class="text-item">Original_Cola</strong>
