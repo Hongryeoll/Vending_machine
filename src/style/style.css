@@ -109,6 +109,7 @@ body {
   font-size: 9px;
   margin: 6px 0 7px;
   line-height: 13px;
+  text-align: center;
 }
 
 .vending-machine .text-price {
@@ -118,6 +119,7 @@ body {
   background-color: #6327fe;
   border-radius: 50px;
   color: #fff;
+  margin: 0 16.2px;
 }
 
 .container-buy .info-balance,
