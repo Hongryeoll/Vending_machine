@@ -7,81 +7,15 @@
     <title>벤딩머신 만들기</title>
     <link rel="stylesheet" href="./src/style/reset.css" />
     <link rel="stylesheet" href="./src/style/style.css" />
-    <script type="module" src="./main.js" defer></script>
+    <script type="module" src="./src/main.js" defer></script>
   </head>
   <body>
     <div id="app">
       <h1 class="title-app ir">cola cola</h1>
       <section class="vending-machine">
         <h2 class="ir">자판기 화면</h2>
-        <ul class="list-item">
-          <li>
-            <button type="button" class="button-item">
-              <img
-                class="img-item"
-                src="./src/images/Original_Cola.svg"
-                alt="Original"
-              />
-              <strong class="title-item">Original_Cola</strong>
-              <span class="text-price">1000원</span>
-            </button>
-          </li>
-          <li class="sold-out">
-            <button class="button-item">
-              <img
-                class="img-item"
-                src="./src/images/Violet_cola.svg"
-                alt="Violet"
-              />
-              <strong class="title-item">Violet_Cola</strong>
-              <span class="text-price">1000원</span>
-            </button>
-          </li>
-          <li>
-            <button class="button-item">
-              <img
-                class="img-item"
-                src="./src/images/Yellow_Cola.svg"
-                alt="Yellow"
-              />
-              <strong class="title-item">Yellow_Cola</strong>
-              <span class="text-price">1000원</span>
-            </button>
-          </li>
-          <li>
-            <button class="button-item">
-              <img
-                class="img-item"
-                src="./src/images/Cool_Cola.svg"
-                alt="Cool"
-              />
-              <strong class="title-item">Cool_Cola</strong>
-              <span class="text-price">1000원</span>
-            </button>
-          </li>
-          <li>
-            <button class="button-item">
-              <img
-                class="img-item"
-                src="./src/images/Green_Cola.svg"
-                alt="Green"
-              />
-              <strong class="title-item">Green_Cola</strong>
-              <span class="text-price">1000원</span>
-            </button>
-          </li>
-          <li>
-            <button class="button-item">
-              <img
-                class="img-item"
-                src="./src/images/Orange_Cola.svg"
-                alt="Orange"
-              />
-              <strong class="title-item">Orange_Cola</strong>
-              <span class="text-price">1000원</span>
-            </button>
-          </li>
-        </ul>
+        <!-- json으로 item정보 출력 -->
+        <ul class="list-item"></ul>
         <section class="container-buy">
           <h2 class="ir">구입 관련 정보</h2>
           <div class="info-balance">
@@ -175,3 +109,4 @@
     </div>
   </body>
 </html>
+
