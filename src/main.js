@@ -32,7 +32,7 @@ function displayItemsList(item){
 // 입금 클릭시 잔액 변경.
 const buttonDeposit = document.querySelector(".button-put");
 const textDepsit = document.querySelector(".input-put");
-const myMooney = document.querySelector(".text-mymoney");
+const myMoney = document.querySelector(".text-mymoney");
 const textBalance = document.querySelector(".text-balance");
 
 buttonDeposit.addEventListener('click', () => {
@@ -46,6 +46,13 @@ buttonDeposit.addEventListener('click', () => {
     textDepsit.value = null;
 })
 
+// 거스름 돈 반환 후 잔액 0, 소지금에 잔액 추가
+
+const buttonReturn = document.querySelector(".button-return");
+buttonReturn.addEventListener('click', () => {
+    myMoney.textContent = parseInt(myMoney.textContent) + parseInt(textBalance.textContent);
+    textBalance.textContent = 0;
+})
 // json 함수 호출
 getJson()
     .then(items => {
