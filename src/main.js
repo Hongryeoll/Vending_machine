@@ -53,6 +53,44 @@ buttonReturn.addEventListener('click', () => {
     myMoney.textContent = parseInt(myMoney.textContent) + parseInt(textBalance.textContent);
     textBalance.textContent = 0;
 })
+
+// item 클릭시 list-item-get에 저장
+const getListCola = document.querySelector(".list-item");
+let colaObject = {};
+getListCola.addEventListener('click', event=>{
+    const clickedCola = event.target.dataset.value;
+    // item 밖에 클릭시 동작 예외 처리
+        if(event.target.localName !== "ul"){
+            // 잔액이 없는 경우 콜라 선택 불가.
+            if(parseInt(textBalance.textContent)>=1000){
+                Object.keys(colaObject).includes(clickedCola) ? itemCount(clickedCola) : newItem(clickedCola, event);
+            }
+        }
+})
+
+function newItem(clickedCola, event){
+    displayGetCola.insertAdjacentHTML("afterbegin", creatGetHTMLString(event));
+    itemCount(clickedCola);
+}
+
+function creatGetHTMLString(item){
+    let className = item.target.classList.value;
+    let array = className.split("");
+    array.splice(0,5);
+    className = array.join("");
+
+    return `
+    <div data-value="${className}" class = "list-item-staged">
+    <img
+        src="./images/${className}_cola.svg"
+        alt = "${className} cola"
+        class = "img-item"
+    />
+    <strong class = "text-item">${className}</strong>
+    <strong class = "number=counter"></strong>
+    `
+}
+
 // json 함수 호출
 getJson()
     .then(items => {
