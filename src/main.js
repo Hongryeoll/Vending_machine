@@ -54,6 +54,52 @@ buttonReturn.addEventListener('click', () => {
     textBalance.textContent = 0;
 })
 
+// 선택한 콜라 화면
+
+const displayGetCola = document.querySelector(".list-item-staged");
+
+// 선택한 콜라 수량 변경
+function itemCount(itemName){
+    // getItem에 동일 item이 있는 경우 수량 변경
+    colaObject[itemName] ? colaObject[itemName] += 1 : colaObject[itemName] = 1;
+
+    // 10개 이상 선택시 품절
+    if(colaObject[itemName] >= 10){
+        soldOut(itemName, colaObject[itemName])
+    }
+
+    // 콜라 수량 변경 요청 온 콜라이름과 기존에 등록된 콜라들 중 맞는 이름을 찾아 해당 콜라 수량을 변경.
+    for(let i = 0; i < displayGetCola.children.length; i++){
+        if(displayGetCola.children[i].dataset.value === itemName){
+            displayGetCola.children[i].lastElementChild.innerHTML = colaObject[itemName];
+        }
+    }
+}
+
+// getItem에서 item 클릭시 수량 감소.
+displayGetCola.addEventListener('click', (event)=>{
+    // 외부 클릭 예외처리
+    event.target.className === "list-item-staged" ? "" : getItemListCount(event);
+})
+
+function getItemListCount(event){
+    let clickedItem = event.path.find(item => item.className === ".list-item-staged");
+    let colaName = clickedItem.dataset.value;
+    let colaCount = clickedItem.children[2];
+
+    if(colaCount.innerText === "1"){
+        delete colaObject[itemName];
+        clickedItem.outerHTML = "";
+    } else {
+        itemCount.innerText -= 1;
+        colaObject[itemName] -= 1;
+    }
+
+    if(colaObject[itemName] <= 10){
+        soldOut(itemName, colaObject[itemName]);
+    }
+}
+
 // item 클릭시 list-item-get에 저장
 const getListCola = document.querySelector(".list-item");
 let colaObject = {};
