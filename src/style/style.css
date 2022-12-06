@@ -257,6 +257,19 @@ body {
   border-radius: 5px;
 }
 
+.container-myitems .list-item-get .li {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+}
+
+.container-myitems .list-item-get .li + .li {
+  margin-top: 6px;
+}
+
 .container-myitems .text-total {
   display: block;
   text-align: right;

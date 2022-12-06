@@ -79,11 +79,11 @@ function itemCount(itemName){
 // getItem에서 item 클릭시 수량 감소.
 displayGetCola.addEventListener("click", (event)=>{
     // 외부 클릭 예외처리
-    event.target.className === "list-item-get" ? "" : getItemListCount(event);
+    event.target.className === "list-item-get li" ? "" : getItemListCount(event);
 })
 
 function getItemListCount(event){
-    let clickedItem = event.path.find(item => item.className === ".list-item-get");
+    let clickedItem = event.path.find(item => item.className === ".list-item-get li");
     let colaName = clickedItem.dataset.value;
     let colaCount = clickedItem.children[2];
 
@@ -124,7 +124,6 @@ function creatGetHTMLString(item){
     let array = className.split("");
     // array.splice(0,0);
     className = array.join("");
-    console.log(item.target.dataset.value);
     return `
     <div data-value="${className}" class = "list-item-get li">
     <img
@@ -135,6 +134,37 @@ function creatGetHTMLString(item){
     <strong class = "text-item">${className}</strong>
     <strong class = "number-counter"></strong>
     `
+}
+
+// 획득 버튼 클릭시
+const buttonGetItem = document.querySelector(".button-staged");
+buttonGetItem.addEventListener('click', () => {
+    // 총 수량 * 1000원 > 잔액 = 획득 불가, 경고 출력
+    // 총 수량 * 1000원 < 잔액 = 정상 획득, 획득 음료 list에 추가
+    let totalCount = 0;
+    for(let i=0; i < displayGetCola.children.length; i++){
+        totalCount += parseInt(displayGetCola.children[i].children[2].innerText);
+    }
+
+    if(totalCount * 1000 > parseInt(textBalance.textContent)){
+        alert("잔액이 부족합니다.")
+    } else if(displayGetCola.children.length === 0){
+        // displayGetCola에 아무것도 없을 경우 예외 처리
+        return
+    } else{
+        getResult();
+        // 잔액 차감 및 콜라 아이템 초기화
+        textBalance.textContent -= totalCount * 1000;
+        colaObject = new Object(); // item초기화
+        displayGetCola.innerHTML = `` // list-item-get초기화
+        totalPrice();
+    }
+})
+
+// 획득한 음료에 아이템 표시.
+const result = document.querySelector(".list-item-get.result");
+function getResult(){
+    result.insertAdjacentHTML("afterbegin", displayGetCola.innerHTML);
 }
 
 // json 함수 호출
