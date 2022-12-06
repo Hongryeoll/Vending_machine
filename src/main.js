@@ -28,7 +28,23 @@ function displayItemsList(item){
     </li>
     `
 }
-console.log(displayItemsList.value);
+
+// 입금 클릭시 잔액 변경.
+const buttonDeposit = document.querySelector(".button-put");
+const textDepsit = document.querySelector(".input-put");
+const myMooney = document.querySelector(".text-mymoney");
+const textBalance = document.querySelector(".text-balance");
+
+buttonDeposit.addEventListener('click', () => {
+    // 입금액 공백에 대한 잔액 예외처리
+    if(textDepsit.value == ''){
+        textDepsit.value = 0;
+    }
+    // 기존 추가 입금액 저장
+    textBalance.textContent = parseInt(textDepsit.value) + parseInt(textBalance.textContent);
+    // 임금 후 금액 초기화
+    textDepsit.value = null;
+})
 
 // json 함수 호출
 getJson()
