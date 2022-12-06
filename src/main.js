@@ -56,7 +56,7 @@ buttonReturn.addEventListener('click', () => {
 
 // 선택한 콜라 화면
 
-const displayGetCola = document.querySelector(".list-item-staged");
+const displayGetCola = document.querySelector(".list-item-get");
 
 // 선택한 콜라 수량 변경
 function itemCount(itemName){
@@ -65,7 +65,7 @@ function itemCount(itemName){
 
     // 10개 이상 선택시 품절
     if(colaObject[itemName] >= 10){
-        soldOut(itemName, colaObject[itemName])
+        // soldOut(itemName, colaObject[itemName])
     }
 
     // 콜라 수량 변경 요청 온 콜라이름과 기존에 등록된 콜라들 중 맞는 이름을 찾아 해당 콜라 수량을 변경.
@@ -77,13 +77,13 @@ function itemCount(itemName){
 }
 
 // getItem에서 item 클릭시 수량 감소.
-displayGetCola.addEventListener('click', (event)=>{
+displayGetCola.addEventListener("click", (event)=>{
     // 외부 클릭 예외처리
-    event.target.className === "list-item-staged" ? "" : getItemListCount(event);
+    event.target.className === "list-item-get" ? "" : getItemListCount(event);
 })
 
 function getItemListCount(event){
-    let clickedItem = event.path.find(item => item.className === ".list-item-staged");
+    let clickedItem = event.path.find(item => item.className === ".list-item-get");
     let colaName = clickedItem.dataset.value;
     let colaCount = clickedItem.children[2];
 
@@ -120,20 +120,20 @@ function newItem(clickedCola, event){
 }
 
 function creatGetHTMLString(item){
-    let className = item.target.classList.value;
+    let className = item.target.dataset.value;
     let array = className.split("");
-    array.splice(0,5);
+    // array.splice(0,0);
     className = array.join("");
-
+    console.log(item.target.dataset.value);
     return `
-    <div data-value="${className}" class = "list-item-staged">
+    <div data-value="${className}" class = "list-item-get li">
     <img
-        src="./images/${className}_cola.svg"
+        src="./src/images/${className}.svg"
         alt = "${className} cola"
         class = "img-item"
     />
     <strong class = "text-item">${className}</strong>
-    <strong class = "number=counter"></strong>
+    <strong class = "number-counter"></strong>
     `
 }
 
