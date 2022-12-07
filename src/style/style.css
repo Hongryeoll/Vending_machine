@@ -70,18 +70,18 @@ body {
 
 .button-item.soldout::before
 {
-    content: "";
-    width: 94px;
-    height: 135px;
-    position: absolute;
-    margin: -11px 0 0 0;
-    background: black;
-    opacity: .7;
-    background-image: url(../images/Sold-out.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 10px;
-    text-align: center;
+  content: "";
+  width: 94px;
+  height: 135px;
+  position: absolute;
+  margin: -11px 0 0 0;
+  background: black;
+  opacity: .7;
+  background-image: url(../images/Sold-out.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .vending-machine .button-item {
@@ -143,6 +143,14 @@ body {
 
 .info-balance .text-balance {
   float: right;
+}
+
+.info-balance .text-balance::before{
+  content: "잔액 : ";
+}
+
+.info-balance .text-balance::after{
+  content: "원 ";
 }
 
 .container-buy .input-put {
@@ -223,6 +231,16 @@ body {
   font-weight: 700;
 }
 
+.container-mymoney .text-mymoney::before{
+  content: "반환금 : ";
+  float: left;
+  margin-right: 210px;
+}
+
+.container-mymoney .text-mymoney::after{
+  content: "원";
+}
+
 .my-info .container-myitems {
   margin-top: 20px;
   background-color: #fff;
@@ -267,6 +285,14 @@ body {
   font-weight: 500;
   margin-top: 10px;
   
+}
+
+.container-myitems .text-total::before{
+  content: "총금액 : ";
+}
+
+.container-myitems .text-total::after{
+  content: "원";
 }
 
 .container-buy .list-item-get::-webkit-scrollbar {
