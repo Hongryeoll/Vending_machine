@@ -32,7 +32,7 @@
 
     {
         "name": "Green_cola",
-        "image": "./src/images/green_cola.svg",
+        "image": "./src/images/Green_cola.svg",
         "color": "green",
         "price": 1000
     },
