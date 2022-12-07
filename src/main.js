@@ -59,19 +59,20 @@ buttonReturn.addEventListener('click', () => {
 const displayGetCola = document.querySelector(".list-item-get");
 
 // 선택한 콜라 수량 변경
-function itemCount(itemName){
+function itemCount(colaName){
     // getItem에 동일 item이 있는 경우 수량 변경
-    colaObject[itemName] ? colaObject[itemName] += 1 : colaObject[itemName] = 1;
+    colaObject[colaName] ? colaObject[colaName] += 1 : colaObject[colaName] = 1;
+    console.log(colaObject);
 
     // 10개 이상 선택시 품절
-    if(colaObject[itemName] >= 10){
-        soldOut(itemName, colaObject[itemName])
+    if(colaObject[colaName] >= 10){
+        soldOut(colaName, colaObject[colaName])
     }
 
     // 콜라 수량 변경 요청 온 콜라이름과 기존에 등록된 콜라들 중 맞는 이름을 찾아 해당 콜라 수량을 변경.
     for(let i = 0; i < displayGetCola.children.length; i++){
-        if(displayGetCola.children[i].dataset.value === itemName){
-            displayGetCola.children[i].lastElementChild.innerHTML = colaObject[itemName];
+        if(displayGetCola.children[i].dataset.value === colaName){
+            displayGetCola.children[i].lastElementChild.innerHTML = colaObject[colaName];
         }
     }
 }
@@ -91,24 +92,25 @@ function soldOut(colaItem, colaItemCount){
 // getItem에서 item 클릭시 수량 감소.
 displayGetCola.addEventListener("click", (event)=>{
     // 외부 클릭 예외처리
-    event.target.className === "list-item-get li" ? "" : getItemListCount(event);
+    event.target.className === "list-item-get" ? "" : getItemListCount(event);
 })
 
 function getItemListCount(event){
-    let clickedItem = event.path.find(item => item.className === ".list-item-get li");
-    let colaName = clickedItem.dataset.value;
-    let colaCount = clickedItem.children[2];
-
+    let clickedItem = event.path.find(item => item.className === "list-item-get");
+    console.log(clickedItem.children);
+    let colaName = clickedItem.children[0].attributes[0].value;
+    let colaCount = clickedItem.children[0].children[2];
     if(colaCount.innerText === "1"){
-        delete colaObject[itemName];
-        clickedItem.outerHTML = "";
+        delete colaObject[colaName];
+        // console.log(clickedItem);
+        clickedItem.children[0].outerHTML = "";
     } else {
-        itemCount.innerText -= 1;
-        colaObject[itemName] -= 1;
+        colaCount.innerText -= 1;
+        colaObject[colaName] -= 1;
     }
 
-    if(colaObject[itemName] <= 10){
-        soldOut(itemName, colaObject[itemName]);
+    if(colaObject[colaName] <= 10){
+        soldOut(colaName, colaObject[colaName]);
     }
 }
 
