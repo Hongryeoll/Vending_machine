@@ -145,7 +145,7 @@ body {
   float: right;
 }
 
-.info-balance .text-balance::before{
+.info-balance::before{
   content: "잔액 : ";
 }
 
@@ -231,10 +231,9 @@ body {
   font-weight: 700;
 }
 
-.container-mymoney .text-mymoney::before{
+.container-mymoney .info-mymoney::before{
   content: "반환금 : ";
-  float: left;
-  margin-right: 210px;
+  font-weight: 700;
 }
 
 .container-mymoney .text-mymoney::after{
