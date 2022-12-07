@@ -65,13 +65,25 @@ function itemCount(itemName){
 
     // 10개 이상 선택시 품절
     if(colaObject[itemName] >= 10){
-        // soldOut(itemName, colaObject[itemName])
+        soldOut(itemName, colaObject[itemName])
     }
 
     // 콜라 수량 변경 요청 온 콜라이름과 기존에 등록된 콜라들 중 맞는 이름을 찾아 해당 콜라 수량을 변경.
     for(let i = 0; i < displayGetCola.children.length; i++){
         if(displayGetCola.children[i].dataset.value === itemName){
             displayGetCola.children[i].lastElementChild.innerHTML = colaObject[itemName];
+        }
+    }
+}
+
+function soldOut(colaItem, colaItemCount){
+    for(let j = 0; j < getListCola.children.length; j++){
+        if(getListCola.children[j].dataset.value === colaItem){
+            if(colaItemCount >= 10){
+                getListCola.children[j].classList.add("soldout");
+            } else{
+                getListCola.children[j].classList.remove("soldout");
+            }
         }
     }
 }
