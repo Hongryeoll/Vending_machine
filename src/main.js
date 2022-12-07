@@ -62,7 +62,6 @@ const displayGetCola = document.querySelector(".list-item-get");
 function itemCount(colaName){
     // getItem에 동일 item이 있는 경우 수량 변경
     colaObject[colaName] ? colaObject[colaName] += 1 : colaObject[colaName] = 1;
-    console.log(colaObject);
 
     // 10개 이상 선택시 품절
     if(colaObject[colaName] >= 10){
@@ -102,7 +101,6 @@ function getItemListCount(event){
     let colaCount = clickedItem.children[0].children[2];
     if(colaCount.innerText === "1"){
         delete colaObject[colaName];
-        // console.log(clickedItem);
         clickedItem.children[0].outerHTML = "";
     } else {
         colaCount.innerText -= 1;
