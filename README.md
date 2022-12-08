@@ -1,4 +1,4 @@
-# <a href='https://hongryeoll.github.io/Vending_machine/'>Vending_machine</a>
+# <a href='https://hongryeoll.github.io/Vending_machine/'>Vending_machine 바로가기</a>
 
 |                            웹                             |                            모바일                           |
 | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
