@@ -1,8 +1,8 @@
-# Vending_machine 
+# <a href='https://hongryeoll.github.io/Vending_machine/'>Vending_machine</a>
 
 |                            웹                             |                            모바일                           |
 | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
-| <img src="./src/images/VendingMachine_Web.gif" width="220" height="400"/> | <img src="./src/images/VendingMachine_Mobile.gif" width="220" height="400"/> |
+| <img src="./src/images/VendingMachine_Web.gif" width="270" height="450"/> | <img src="./src/images/VendingMachine_Mobile.gif" width="270" height="450"/> |
 
 ----
 ## 기술 스택
