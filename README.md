@@ -2,7 +2,7 @@
 
 밴딩머신 제작
 ======
-![image](https://user-images.githubusercontent.com/95600994/165269443-bd6b8764-ba8f-4077-a586-e28a70b1575e.png)
+![image]![ezgif com-gif-maker](https://user-images.githubusercontent.com/102474207/206358701-2096b412-e77d-47ff-a98a-d37fbfe93508.gif)
 
 ----
 ## 기술 스택
@@ -31,8 +31,5 @@
 6. 획득한 콜라 표시
 - 성공적으로 획득시 획득한 음료 list에 표시.
 - 총금액에 구매된 금액 표시.
-반환 클릭.
+7. 반환 클릭.
 - 잔액은 0원으로 표시되며, 반환금에 금액 추가.
-
-## 
-
