@@ -1,8 +1,8 @@
-# 🦁 Vending_machine 🦁
+# Vending_machine 
 
-밴딩머신 제작
-======
-![image]![ezgif com-gif-maker](https://user-images.githubusercontent.com/102474207/206358701-2096b412-e77d-47ff-a98a-d37fbfe93508.gif)
+|                            웹                             |                            모바일                           |
+| :---------------------------------------------------------------: | :---------------------------------------------------------------: |
+| <img src="./src/images/VendingMachine_Web.gif" width="220" height="400"/> | <img src="./src/images/VendingMachine_Mobile.gif" width="220" height="400"/> |
 
 ----
 ## 기술 스택
