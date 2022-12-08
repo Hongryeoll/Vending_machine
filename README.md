@@ -2,7 +2,7 @@
 
 |                            웹                             |                            모바일                           |
 | :---------------------------------------------------------------: | :---------------------------------------------------------------: |
-| <img src="./src/images/VendingMachine_Web.gif" width="300" height="450"/> | <img src="./src/images/VendingMachine_Mobile.gif" width="300" height="450"/> |
+| <img src="./src/images/VendingMachine_Web.gif" width="350" height="450"/> | <img src="./src/images/VendingMachine_Mobile.gif" width="350" height="450"/> |
 
 ----
 ## 기술 스택
